@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
-import { AppRegistry, Text } from 'react-native';
+import { AppRegistry, Image } from 'react-native';
 
 class HelloWorldApp extends Component {
   render() {
+    let pic = {
+      uri: 'https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg'
+    };
     return (
-      <Text>Hello world!</Text>
+      <Image source={pic} style={{left: 10, top: 50, width: 193, height: 110}}/>
     );
   }
 }
