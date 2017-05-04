@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { AppRegistry, Text, View } from 'react-native';
+import { AppRegistry, StyleSheet, Text, View } from 'react-native';
 
 class Greeting extends Component {
   render() {
@@ -54,6 +54,30 @@ class BlinkApp extends Component {
   }
 }
 
+class LotsOfStyles extends Component {
+  render() {
+    return (
+      <View>
+        <Text style={styles.red}>Just red</Text>
+        <Text style={styles.bigblue}>Just bigblue</Text>
+        <Text style={[styles.bigblue, styles.red]}>bigblue, then red</Text>
+        <Text style={[styles.red, styles.bigblue]}>red, then bigblue</Text>
+      </View>
+    );
+  }
+}
+
+const styles = StyleSheet.create({
+  bigblue: {
+    color: 'blue',
+    fontWeight: 'bold',
+    fontSize: 30,
+  },
+  red: {
+    color: 'red',
+  }
+})
+
 class HelloWorldApp extends Component {
   render() {
     let pic = {
@@ -65,4 +89,4 @@ class HelloWorldApp extends Component {
   }
 }
 
-AppRegistry.registerComponent('AwesomeProject', () => BlinkApp);
+AppRegistry.registerComponent('AwesomeProject', () => LotsOfStyles);
