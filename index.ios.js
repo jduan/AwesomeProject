@@ -20,6 +20,40 @@ class LotsOfGreetings extends Component {
     )
   }
 }
+
+class Blink extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {showText: true}
+    // Toggle the state every second
+    setTimeout(() => {
+      setInterval(() => {
+        this.setState({showText: !this.state.showText});
+      }, 4000);
+    }, props.delay)
+  }
+
+  render() {
+    let display = this.state.showText ? this.props.text : '';
+    return (
+      <Text>{display}</Text>
+    );
+  }
+}
+
+class BlinkApp extends Component {
+  render() {
+    return (
+      <View>
+        <Blink text="I love to blink" delay={1000}/>
+        <Blink text="Yes blinking is so great" delay={2000}/>
+        <Blink text="Why did they ever take this out of HTML" delay={3000}/>
+        <Blink text="Look at me look at me look at me" delay={4000}/>
+      </View>
+    );
+  }
+}
+
 class HelloWorldApp extends Component {
   render() {
     let pic = {
@@ -31,4 +65,4 @@ class HelloWorldApp extends Component {
   }
 }
 
-AppRegistry.registerComponent('AwesomeProject', () => LotsOfGreetings);
+AppRegistry.registerComponent('AwesomeProject', () => BlinkApp);
