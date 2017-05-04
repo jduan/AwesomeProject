@@ -1,6 +1,25 @@
 import React, { Component } from 'react';
-import { AppRegistry, Image } from 'react-native';
+import { AppRegistry, Text, View } from 'react-native';
 
+class Greeting extends Component {
+  render() {
+    return (
+      <Text>Hello, {this.props.name}!</Text>
+    );
+  }
+}
+
+class LotsOfGreetings extends Component {
+  render() {
+    return (
+      <View style={{alignItems: 'center'}}>
+        <Greeting name="Rexxar"/>
+        <Greeting name="Jaina"/>
+        <Greeting name="Valeera"/>
+      </View>
+    )
+  }
+}
 class HelloWorldApp extends Component {
   render() {
     let pic = {
@@ -12,4 +31,4 @@ class HelloWorldApp extends Component {
   }
 }
 
-AppRegistry.registerComponent('AwesomeProject', () => HelloWorldApp);
+AppRegistry.registerComponent('AwesomeProject', () => LotsOfGreetings);
