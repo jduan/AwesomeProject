@@ -102,6 +102,30 @@ class FlexDimensionsBasics extends Component {
   }
 }
 
+class FlexDirectionBasics extends Component {
+  render() {
+    return (
+      <View style={{flex: 1, flexDirection: 'column'}}>
+        <View style={{width: 50, height: 50, backgroundColor:'powderblue'}}/>
+        <View style={{width: 50, height: 50, backgroundColor:'skyblue'}}/>
+        <View style={{width: 50, height: 50, backgroundColor:'steelblue'}}/>
+      </View>
+    )
+  }
+}
+
+class JustifyContentBasics extends Component {
+  render() {
+    return (
+      <View style={{flex: 1, flexDirection: 'column', justifyContent: 'space-between'}}>
+        <View style={{width: 50, height: 50, backgroundColor:'powderblue'}}/>
+        <View style={{width: 50, height: 50, backgroundColor:'skyblue'}}/>
+        <View style={{width: 50, height: 50, backgroundColor:'steelblue'}}/>
+      </View>
+    )
+  }
+}
+
 class HelloWorldApp extends Component {
   render() {
     let pic = {
@@ -113,4 +137,4 @@ class HelloWorldApp extends Component {
   }
 }
 
-AppRegistry.registerComponent('AwesomeProject', () => FlexDimensionsBasics);
+AppRegistry.registerComponent('AwesomeProject', () => JustifyContentBasics);
